@@ -3,3 +3,8 @@
     padding: 10px;
     border-bottom: 1px #ccc dotted;
 }
+
+.Timestamp {
+    font-size: x-small;
+    font-weight: lighter;
+}

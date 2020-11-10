@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TicketItem from "./TicketItem";
+import TicketItem from "../ticket_item/TicketItem";
 import PropTypes from 'prop-types';
 
 class Tickets extends Component {

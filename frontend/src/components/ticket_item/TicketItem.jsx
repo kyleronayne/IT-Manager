@@ -25,6 +25,7 @@ export class TicketItem extends Component {
             <div className="TicketItem">
                 {/* Received ticket from Ticekts component */}
                 <div style={ this.getStatusStyle() }>{ this.props.ticket.summary }</div>
+                <p className="Timestamp">{ this.props.ticket.timestamp }</p>
                 <sub>Assigned To: { this.props.ticket.assignee }</sub> 
             </div>
         )
