@@ -7,12 +7,12 @@ class App extends Component {
     tickets: [
       {
         id: 1,
-        owner: "Tom",
-        summary: "Remove HDD from PC 2",
+        owner: "Tina",
+        summary: "Speaker Static",
         description: "",
         timestamp: "",
         priority: "",
-        assignee: "",
+        assignee: "Kyle",
         status: false
       },
       {
@@ -22,8 +22,8 @@ class App extends Component {
         description: "",
         timestamp: "",
         priority: "",
-        assignee: "",
-        status: false
+        assignee: "Kyle",
+        status: true
       }
     ]
   }
@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tickets></Tickets>
+        <Tickets tickets={this.state.tickets}></Tickets>
       </div>
     );
   }

@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import TicketItem from "./TicketItem";
+import PropTypes from 'prop-types';
 
 class Tickets extends Component {
     render() {
-        return (
-            <div>
-                <h1>Tickets</h1>
-            </div>
-        );
+       return this.props.tickets.map((ticket) => (
+        // Passing a ticket to the Tickets component
+        <TicketItem key={ ticket.id } ticket={ ticket }></TicketItem>
+       ));
     }
+}
+
+// PropTypes
+Tickets.propTypes = {
+    tickets: PropTypes.array.isRequired
 }
 
 export default Tickets;
