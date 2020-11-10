@@ -11,8 +11,8 @@ class App extends Component {
         summary: "Speaker Static",
         description: "",
         timestamp: "11/10/2020 2:47 PM",
-        priority: "",
-        assignee: "Kyle",
+        priority: "Low",
+        assignee: "Unassigned",
         status: false
       },
       {
@@ -20,8 +20,8 @@ class App extends Component {
         owner: "Roger",
         summary: "Create Disk Drive Spreadsheet",
         description: "",
-        timestamp: "",
-        priority: "",
+        timestamp: "11/10/2020 9:21 AM",
+        priority: "Medium",
         assignee: "Kyle",
         status: true
       }

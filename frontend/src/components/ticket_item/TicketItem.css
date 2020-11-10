@@ -3,8 +3,19 @@
     padding: 10px;
     border-bottom: 1px #ccc dotted;
 }
+ 
+.Summary {
+    display: inline;
+}
 
-.Timestamp {
+.Info {
+    display: inline;
+    vertical-align: center;
+    padding-left: 10px;
     font-size: x-small;
     font-weight: lighter;
+}
+
+.Priority {
+    font-size: small;
 }
