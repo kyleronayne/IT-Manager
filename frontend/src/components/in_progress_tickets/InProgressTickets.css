@@ -1,0 +1,10 @@
+.InProgressTickets {
+    display: flex;
+    flex-direction: column;
+    float: center;
+    max-width: 500px;
+    margin: auto;
+    border: 2px solid black;
+    padding: 3px;
+    border-radius: 5px;
+  }

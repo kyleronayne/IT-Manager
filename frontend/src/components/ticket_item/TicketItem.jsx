@@ -6,27 +6,43 @@ import "./TicketItem.css"
 export class TicketItem extends Component {
 
     getStatusStyle = () => {
-        // Completed ticket
-        if (this.props.ticket.status) {
-            return {
-                color: "green"
-            }
-        }
         // Un-Completed ticket
-        else {
+        if (this.props.ticket.status === "Unassigned") {
             return {
                 color: "red"
             }
         }
+        // In Progress ticket
+        else if (this.props.ticket.status === "In Progress"){
+            return {
+                color: "orange"
+            }
+        }
+        // Completed ticket
+        else {
+            return {
+                color: "green"
+            }
+        }
+    }
+
+    assign = (e) => {
+        console.log(this.props)
     }
 
     render() {
+
+        // Object de-structuring
+        const { id } = this.props.ticket;
+
         return (
             <div className="TicketItem">
                 {/* Received ticket from Ticekts component */}
                 <h4 className="Summary" style={ this.getStatusStyle() }>{ this.props.ticket.summary }</h4>
                 <p className="Info">By { this.props.ticket.owner }</p>
                 <p className="Info">{ this.props.ticket.timestamp }</p>
+                {/* "Component drilling" the assign function to the Tickets component */}
+                <button className="ClaimButton" onClick={ this.props.claim.bind(this, id) }>Claim</button>
                 <p className="Priority">Priority: { this.props.ticket.priority }</p>
             </div>
         )
