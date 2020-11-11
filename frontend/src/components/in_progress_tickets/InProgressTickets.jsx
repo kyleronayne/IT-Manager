@@ -6,7 +6,6 @@ export class InProgressTickets extends Component {
         return (
             <div className="InProgressTickets">
                 <h2>My In Progress Tickets</h2>
-                <h4>Ticket</h4>
             </div>
         )
     }

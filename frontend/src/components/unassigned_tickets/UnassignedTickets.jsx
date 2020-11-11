@@ -5,18 +5,21 @@ import "./UnassignedTickets.css"
 
 class UnassignedTickets extends Component {
 
-    getTickets = () => {
-        
-    }
+
     render() {
         return (
             <div className="UnassignedTickets">
                 <h2>Unassigned Tickets</h2>
-                {this.props.tickets.map((ticket) => (
-                    // Passing a ticket to the Tickets component
-                    // "Component drilling" claim function to App.js
-                    <TicketItem key={ ticket.id } ticket={ ticket } claim={ this.props.claim }></TicketItem>
-                ))}  
+                {this.props.tickets.map(ticket => {
+                    if(ticket.status === "Unassigned") {
+                        return (
+                            // Passing a ticket to the Tickets component
+                            // "Component drilling" claim function to App.js
+                            <TicketItem key={ ticket.id } ticket={ ticket } claim={ this.props.claim }></TicketItem>
+                        )
+                    }
+                    return null
+                })} 
            </div>
        )
     }
