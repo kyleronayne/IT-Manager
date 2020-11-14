@@ -13,7 +13,6 @@ class UnassignedTickets extends Component {
                 {this.props.tickets.map(ticket => {
                     if(ticket.status === "Unassigned") {
                         return (
-                            // Passing a ticket to the Tickets component
                             // "Component drilling" claim function to App.js
                             <TicketItem key={ ticket.id } ticket={ ticket } claim={ this.props.claim }></TicketItem>
                         )
