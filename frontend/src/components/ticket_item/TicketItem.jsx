@@ -42,7 +42,15 @@ export class TicketItem extends Component {
             return (
                 <div className="TicketButtons">
                     <button className= "CompleteButton" onClick={ this.props.complete.bind(this, id)}>Mark Complete</button>
-                    <button className="ClaimButton" onClick={ this.props.claim.bind(this, id) }>Un-Claim</button>
+                    <button className="UnclaimButton" onClick={ this.props.claim.bind(this, id) }>Un-Claim</button>
+                </div>
+            )
+        }
+        if (this.props.ticket.status === "Completed") {
+            return (
+                <div className="TicketButtons">
+                    <button className= "InProgressButton" onClick={ this.props.complete.bind(this, id)}>Mark In Progress</button>
+                    <button className="UnclaimButton" onClick={ this.props.claim.bind(this, id) }>Un-Claim</button>
                 </div>
             )
         }

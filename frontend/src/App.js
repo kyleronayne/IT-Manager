@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import UnassignedTickets from './components/unassigned_tickets/UnassignedTickets';
 import InProgressTickets from './components/in_progress_tickets/InProgressTickets';
+import CompletedTickets from './components/completed_tickets/CompletedTickets';
 
 class App extends Component {
   state = {
@@ -40,6 +41,10 @@ class App extends Component {
           ticket.status = "Claimed"
           return ticket;
         }
+        if (ticket.status === "Completed") {
+          ticket.status = "Unassigned"
+          return ticket;
+        }
       }
       return ticket;
     }) });
@@ -48,9 +53,13 @@ class App extends Component {
   complete = (id) => {
     this.setState({ tickets: this.state.tickets.map(ticket => {
       if (ticket.id === id) {
-        if (ticket.status === "Claimed") {
+        if (ticket.status === "Unassigned" || ticket.status === "Claimed") {
           ticket.status = "Completed"
           return ticket;
+        }
+        if (ticket.status === "Completed") {
+          ticket.status = "Claimed"
+          return ticket
         }
       }
       return ticket;
@@ -63,6 +72,7 @@ class App extends Component {
       <div className="App">
         <UnassignedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></UnassignedTickets>
         <InProgressTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></InProgressTickets>
+        <CompletedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></CompletedTickets>
       </div>
     );
   }
