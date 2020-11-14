@@ -14,7 +14,7 @@ class UnassignedTickets extends Component {
                     if(ticket.status === "Unassigned") {
                         return (
                             // "Component drilling" claim function to App.js
-                            <TicketItem key={ ticket.id } ticket={ ticket } claim={ this.props.claim }></TicketItem>
+                            <TicketItem key={ ticket.id } ticket={ ticket } complete= {this.props.complete} claim={ this.props.claim }></TicketItem>
                         )
                     }
                     return null

@@ -11,7 +11,7 @@ export class InProgressTickets extends Component {
                     if(ticket.status === "Claimed") {
                         return (
                             // "Component drilling" assign function to App.js
-                            <TicketItem key={ ticket.id } ticket={ ticket } claim={ this.props.claim }></TicketItem>
+                            <TicketItem key={ ticket.id } ticket={ ticket } complete={this.props.complete} claim={ this.props.claim }></TicketItem>
                         )
                     }
                     return null

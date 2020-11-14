@@ -27,3 +27,15 @@
     border-color: rgb(0, 153, 255);
     color:  rgb(0, 153, 255);
 }
+
+.CompleteButton {
+    margin-left: 20px;
+    padding: 3px;
+    border-radius: 5px;
+    border-color: green;
+    color:  green;
+}
+
+.TicketButtons {
+    display: inline;
+}

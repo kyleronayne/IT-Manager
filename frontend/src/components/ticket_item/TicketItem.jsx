@@ -32,12 +32,18 @@ export class TicketItem extends Component {
 
         if (this.props.ticket.status === "Unassigned") {
             return (
-                <button className="ClaimButton" onClick={ this.props.claim.bind(this, id) }>Claim</button>
+                <div className="TicketButtons">
+                    <button className= "CompleteButton" onClick={ this.props.complete.bind(this, id)}>Mark Complete</button>
+                    <button className="ClaimButton" onClick={ this.props.claim.bind(this, id) }>Claim</button>
+                </div>
             )
         }
         if (this.props.ticket.status === "Claimed") {
             return (
-                <button className="ClaimButton" onClick={ this.props.claim.bind(this, id) }>Un-Claim</button>
+                <div className="TicketButtons">
+                    <button className= "CompleteButton" onClick={ this.props.complete.bind(this, id)}>Mark Complete</button>
+                    <button className="ClaimButton" onClick={ this.props.claim.bind(this, id) }>Un-Claim</button>
+                </div>
             )
         }
     }

@@ -45,12 +45,24 @@ class App extends Component {
     }) });
   }
 
+  complete = (id) => {
+    this.setState({ tickets: this.state.tickets.map(ticket => {
+      if (ticket.id === id) {
+        if (ticket.status === "Claimed") {
+          ticket.status = "Completed"
+          return ticket;
+        }
+      }
+      return ticket;
+    })})
+  }
+
   
   render() {
     return (
       <div className="App">
-        <UnassignedTickets tickets={ this.state.tickets } claim={ this.claim }></UnassignedTickets>
-        <InProgressTickets tickets={ this.state.tickets } claim={ this.claim }></InProgressTickets>
+        <UnassignedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></UnassignedTickets>
+        <InProgressTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></InProgressTickets>
       </div>
     );
   }
