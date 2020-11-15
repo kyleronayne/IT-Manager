@@ -70,9 +70,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UnassignedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></UnassignedTickets>
-        <InProgressTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></InProgressTickets>
-        <CompletedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></CompletedTickets>
+        <div className="TicketContainer">
+          <UnassignedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></UnassignedTickets>
+          <InProgressTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></InProgressTickets>
+          <CompletedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></CompletedTickets>
+        </div>
       </div>
     );
   }
