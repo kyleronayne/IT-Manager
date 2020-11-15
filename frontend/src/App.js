@@ -3,6 +3,7 @@ import './App.css';
 import UnassignedTickets from './components/unassigned_tickets/UnassignedTickets';
 import InProgressTickets from './components/in_progress_tickets/InProgressTickets';
 import CompletedTickets from './components/completed_tickets/CompletedTickets';
+import SideMenu from "./components/layout/side_menu/SideMenu";
 
 class App extends Component {
   state = {
@@ -70,6 +71,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <SideMenu></SideMenu>
         <div className="TicketContainer">
           <UnassignedTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></UnassignedTickets>
           <InProgressTickets tickets={ this.state.tickets } complete = { this.complete } claim={ this.claim }></InProgressTickets>
